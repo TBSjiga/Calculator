@@ -1,14 +1,17 @@
 #include <stdio.h>
 #include <stdlib.h>
 
+/* Create a stack */
 int *stack;
 int num = 0;
 
-void push(int result)
+/* Add element on top of the stack */
+void push(int result) 
 {
     stack[num++] = result;
 }
 
+ /* Remove the element from the top of the stack */
 int pop(void)
 {
 	if (num > 0)
@@ -25,11 +28,15 @@ int pop(void)
 int main(int argc, char *argv[])
 {
         int  i,x,y,z;
+	/* Select memory */
         stack =(int *) malloc ( sizeof(int) * argc );
+	
         if ( stack == NULL )
         {
 		exit (1);
 	}
+	
+	/* Work with the input chars */
         for( i = 1; i < argc; i++ )
         {
                 switch ( (int) argv[i][0] )
